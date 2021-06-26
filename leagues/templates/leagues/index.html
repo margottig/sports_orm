@@ -4,6 +4,7 @@
 		<title>Sports Leagues</title>
 	</head>
 	<body>
+		<!-- LEAGUES queries -->
 		<h1>Leagues</h1>
 		<ol>
 			{% for league in leagues %}
@@ -12,6 +13,14 @@
 				<p>No leagues found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
 			{% endfor %}
 		</ol>
+		<h3>... todas las ligas con un jugador (actual) llamado "Sophia"</h3>
+		<ol>
+			{% for qry in qry_2_7 %}
+				<li>{{qry.name}}</li>
+			{% endfor %}
+		</ol>
+
+		<!-- TEAMS queries -->
 		<h1>Teams</h1>
 		<ol>
 			{% for team in teams %}
@@ -20,12 +29,99 @@
 				<p>No teams found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
 			{% endfor %}
 		</ol>
+		<h3>...todos los equipos en la Atlantic Soccer Conference</h3>
+		<ol>
+			{% for qry in qry_2_1 %}
+				<li>{{qry.team_name}}</li>
+			{% endfor %}
+		</ol>
+		<h3>... todos los equipos con un jugador (actual) llamado "Sophia"</h3>
+		<ol>
+			{% for qry in qry_2_6 %}
+				<li>{{qry.location}} {{qry.team_name}}</li>
+			{% endfor %}
+		</ol>
+		 <h3>... todos los equipos, pasados y presentes, con los que Samuel Evans ha jugado</h3> 
+		<ol>
+			{% for qry in qry_2_9 %}
+				<li>{{qry.location}} {{qry.team_name}}</li>
+			{% endfor %}
+		</ol>
+		<h3>... cada equipo para el que Jacob Gray jugó antes de unirse a los Oregon Colts</h3>
+		<ol>
+			{% for qry in qry_2_12 %}
+				<li>{{qry.location}} {{qry.team_name}}</li>
+			{% endfor %}
+		</ol>
+		<h3>... todos los equipos que han tenido 12 o más jugadores, pasados y presentes.</h3>
+		<ol>
+			{% for qry in qry_2_14 %}
+				<li>{{qry.location}} {{qry.team_name}}</li>
+			{% endfor %}
+		</ol>
+
+
+		<!-- PLAYERS queries -->
 		<h1>Players</h1>
 		<ol>
 			{% for player in players %}
 				<li>{{player.first_name}} {{player.last_name}}</li>
 			{% empty %}
 				<p>No teams found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+			{% endfor %}
+		</ol>
+		<h3>...todos los jugadores (actuales) en los Boston Penguins</h3>
+		<ol>
+			{% for qry in qry_2_2 %}
+				<li>{{qry.first_name}} {{qry.last_name}}</li>
+			{% endfor %}
+		</ol>
+		<h3>... todos los jugadores (actuales) en la International Collegiate Baseball Conference</h3>
+		<ol>
+			{% for qry in qry_2_3 %}
+				<li>{{qry.first_name}} {{qry.last_name}}</li>
+			{% endfor %}
+		</ol>
+		<h3>... todos los jugadores (actuales) en la Conferencia Americana de Fútbol Amateur con el apellido "López"</h3>
+		<ol>
+			{% for qry in qry_2_4 %}
+				<li>{{qry.first_name}} {{qry.last_name}}</li>
+			{% endfor %}
+		</ol>
+		<h3>... todos los jugadores de fútbol</h3>
+		<ol>
+			{% for qry in qry_2_5 %}
+				<li>{{qry.first_name}} {{qry.last_name}}</li>
+			{% endfor %}
+		</ol>
+		<h3>... todos con el apellido "Flores" que NO (actualmente) juegan para los Washington Roughriders</h3>
+		<ol>
+			{% for qry in qry_2_8 %}
+				<li>{{qry.first_name}} {{qry.last_name}}</li>
+			{% endfor %}
+		</ol>
+		<h3>... todos los jugadores, pasados y presentes, con los gatos tigre de Manitoba</h3>
+		<ol>
+			{% for qry in qry_2_10 %}
+				<li>{{qry.first_name}} {{qry.last_name}}</li>
+			{% endfor %}
+		</ol>
+		<h3>... todos los jugadores que anteriormente estaban (pero que no lo están) con los Wichita Vikings</h3>
+		<ol>
+			{% for qry in qry_2_11 %}
+				<li>{{qry.first_name}} {{qry.last_name}}</li>
+			{% endfor %}
+		</ol>
+		<h3>... todos llamados "Joshua" que alguna vez han jugado en la Federación Atlántica de Jugadores de Béisbol Amateur</h3>
+		<ol>
+			{% for qry in qry_2_13 %}
+				<li>{{qry.first_name}} {{qry.last_name}}</li>
+			{% endfor %}
+		</ol>
+		<h3>... todos los jugadores y el número de equipos para los que jugó, ordenados por la cantidad de equipos para los que han jugado</h3>
+		<ol>
+			{% for qry in qry_2_15 %}
+				<li>{{qry.first_name}} {{qry.last_name}}</li>
 			{% endfor %}
 		</ol>
 	</body>
